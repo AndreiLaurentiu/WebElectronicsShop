@@ -1,21 +1,25 @@
 package products;
 
 public class Switch extends Networking{
+	private static int idSwitchIndex = 1;
+    private int idSwitch;
     String connectivity;
     String poe;
     String ledIndicators;
     String rackMountable;
     String macTable;
 
-    public Switch(int idProduct, String brand, int weight, String dimensions, String colour, int price, String ports,
+    public Switch(String productName, String brand, int weight, String dimensions, String colour, int price, String ports,
                   String standards, String management, String powerSupply, String transferSpeed,
                   String connectivity, String poe, String ledIndicators, String rackMountable, String macTable) {
-        super(idProduct, brand, weight, dimensions, colour, price, ports, standards, management, powerSupply, transferSpeed);
+        super(productName, brand, weight, dimensions, colour, price, ports, standards, management, powerSupply, transferSpeed);
+        this.idSwitch = idSwitchIndex;
         this.connectivity = connectivity;
         this.poe = poe;
         this.ledIndicators = ledIndicators;
         this.rackMountable = rackMountable;
         this.macTable = macTable;
+        idSwitchIndex++;
     }
     
     @Override

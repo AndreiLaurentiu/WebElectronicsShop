@@ -1,6 +1,8 @@
 package products;
 
 public abstract class Networking extends Product{
+	private static int idNetworkingIndex = 1;
+	private int idNetworking;
     private String ports;
     private String standards;
     private String management;
@@ -8,14 +10,16 @@ public abstract class Networking extends Product{
     private String transferSpeed;
     private String others;
 
-    public Networking(int idProduct, String brand, int weight, String dimensions, String colour,int price, 
+    public Networking(String nameProduct, String brand, int weight, String dimensions, String colour,int price, 
                       String ports, String standards, String management, String powerSupply, String transferSpeed) {
-        super(idProduct, brand, weight, dimensions, colour, price);
+        super(nameProduct, brand, weight, dimensions, colour, price);
+        this.idNetworking = idNetworkingIndex;
         this.ports = ports;
         this.standards = standards;
         this.management = management;
         this.powerSupply = powerSupply;
         this.transferSpeed = transferSpeed;
+        idNetworkingIndex++;
     }
     public String getPorts() {
         return ports;

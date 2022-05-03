@@ -1,6 +1,7 @@
 package products;
 
 public class Phone extends ItUserDevices{
+	private static int idPhoneIndex = 1;
 	private int idPhone;
     private String dualSim;
     private String network2g;
@@ -13,14 +14,14 @@ public class Phone extends ItUserDevices{
     private String memorySlot;
     private String sensors;
 
-    public Phone(int idProduct, String brand, float weight, String dimensions, String colour, int price, String processorType, String processorFrequency,
+    public Phone(String productName, String brand, float weight, String dimensions, String colour, int price, String processorType, String processorFrequency,
                  String HDDCapacity, String RAMMemory, String displayType, float diagonal, String wireless, String bluetooth,
                  String ports, String audio, String camera, String battery, String operatingSystem, String dualSim, String network2g,
                  String network3g, String network4g, String gps, String wlan,
                  String nfc, String resolution, String memorySlot, String sensors) {
-        super(idProduct, brand, weight, dimensions, colour, price, processorType, processorFrequency, HDDCapacity, RAMMemory, displayType, diagonal, 
+        super(productName, brand, weight, dimensions, colour, price, processorType, processorFrequency, HDDCapacity, RAMMemory, displayType, diagonal, 
         		wireless, bluetooth, ports, audio, camera, battery, operatingSystem);
-        this.idPhone = idProduct;
+        this.idPhone = idPhoneIndex;
         this.dualSim = dualSim;
         this.network2g = network2g;
         this.network3g = network3g;
@@ -31,6 +32,7 @@ public class Phone extends ItUserDevices{
         this.resolution = resolution;
         this.memorySlot = memorySlot;
         this.sensors = sensors;
+        idPhoneIndex++;
     }
 
     @Override

@@ -1,6 +1,8 @@
 package products;
 
 public class TV extends Product{
+	private static int idTVIndex = 1;
+    private int idTV;
     private String diagonal;
     private String displayType;
     private String resolution;
@@ -20,13 +22,14 @@ public class TV extends Product{
     private String others;
     private String tuner;
 
-    public TV(int idProduct, String brand, int weight, String dimensions, String colour, int price,
+    public TV(String productName, String brand, int weight, String dimensions, String colour, int price,
               String diagonal, String displayType, String resolution, String screenResolution,
               String curbed, String imageCharacteristics, String soundCharacteristics, String integratedSpeaker,
               String connector, String hdmiInputs, String bluetooth, String usbInput, String ciSlot,
               String smartTVFunctions, String powerConsumption,
               String includedAccessories, String others, String tuner) {
-        super(idProduct, brand, weight, dimensions, colour, price);
+        super(productName, brand, weight, dimensions, colour, price);
+        this.idTV = idTVIndex;
         this.diagonal = diagonal;
         this.displayType = displayType;
         this.resolution = resolution;
@@ -45,6 +48,7 @@ public class TV extends Product{
         this.includedAccessories = includedAccessories;
         this.others = others;
         this.tuner = tuner;
+        idTVIndex++;
     }
    
     

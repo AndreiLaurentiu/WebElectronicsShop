@@ -1,6 +1,8 @@
 package products;
 
 public class WifiRouter extends Networking{
+	private static int idWifiRouterIndex = 1;
+    private int idWifiRouter;
     private String standard80211ac;
     private String connectors;
     private String usb;
@@ -19,12 +21,13 @@ public class WifiRouter extends Networking{
     private String others;
 
 
-    public WifiRouter(int idProdcut, String brand, int weight, String dimensions, String colour, int price, String ports, String standards,
+    public WifiRouter(String productName, String brand, int weight, String dimensions, String colour, int price, String ports, String standards,
                       String management, String powerSupply, String transferSpeed, String standard80211ac, String connectors,
                       String usb, String transferRate, String frequency, String security,
                       String compatibility3g4g, String others, String antenna, String gigabyte, String wirelessFrequency,
                       String supportedProtocols, String transmissionPower, String simSupport, String specialCharacteristics) {
-        super(idProdcut, brand, weight, dimensions, colour, price, ports, standards, management, powerSupply, transferSpeed);
+        super(productName, brand, weight, dimensions, colour, price, ports, standards, management, powerSupply, transferSpeed);
+        this.idWifiRouter = idWifiRouterIndex;
         this.standard80211ac = standard80211ac;
         this.connectors = connectors;
         this.usb = usb;
@@ -41,6 +44,7 @@ public class WifiRouter extends Networking{
         this.transmissionPower = transmissionPower;
         this.simSupport = simSupport;
         this.specialCharacteristics = specialCharacteristics;
+        idWifiRouterIndex++;
     }
     
     @Override

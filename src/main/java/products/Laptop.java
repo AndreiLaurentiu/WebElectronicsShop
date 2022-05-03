@@ -1,6 +1,8 @@
 package products;
 
 public class Laptop extends ItUserDevices{
+	private static int idLaptopIndex = 1;
+	private int idLaptop;
     private String powerConsumed;
     private String cacheMemory;
     private String chipsetVideo;
@@ -12,15 +14,16 @@ public class Laptop extends ItUserDevices{
     private String numericalKeyboard;
     private String illuminatedKeyboard;
 
-    public Laptop(int idProduct, String brand, int weight, String dimensions, String colour, int price, String processorType,
+    public Laptop(String productName, String brand, int weight, String dimensions, String colour, int price, String processorType,
                   String processorFrequency, String HDDCapacity, String RAMMemory, String displayType,
                   float diagonal, String wireless, String bluetooth, String ports, String audio,
                   String camera, String battery, String operatingSystem, String powerConsumed, String cacheMemory,
                   String chipsetVideo, String videoRamMemory, String touchscreen,
                   String optimalResolution, String slots, String cardReader, String numericalKeyboard,
                   String illuminatedKeyboard) {
-        super(idProduct, brand, weight, dimensions, colour, price, processorType, processorFrequency, HDDCapacity, RAMMemory, displayType, diagonal, wireless, 
+        super(productName, brand, weight, dimensions, colour, price, processorType, processorFrequency, HDDCapacity, RAMMemory, displayType, diagonal, wireless, 
         		bluetooth, ports, audio, camera, battery, operatingSystem);
+        this.idLaptop = idLaptopIndex;
         this.powerConsumed = powerConsumed;
         this.cacheMemory = cacheMemory;
         this.chipsetVideo = chipsetVideo;
@@ -31,6 +34,7 @@ public class Laptop extends ItUserDevices{
         this.cardReader = cardReader;
         this.numericalKeyboard = numericalKeyboard;
         this.illuminatedKeyboard = illuminatedKeyboard;
+        idLaptopIndex++;
     }
     
     @Override

@@ -1,12 +1,12 @@
 package services;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.function.Predicate;
 
 import products.Laptop;
 
 public class ServiceLaptops {
-	ArrayList<Laptop> listLaptops = new ArrayList<>();
+	LinkedList<Laptop> listLaptops = new LinkedList<>();
 	
 	
 	public void addLaptop(Laptop laptop) {
@@ -31,5 +31,8 @@ public class ServiceLaptops {
         listLaptops.removeIf(filter);
     }
     
+    public LinkedList<Laptop> getArrayOfLaptops(){
+    	return listLaptops;
+    }
     
 }

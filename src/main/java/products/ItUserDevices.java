@@ -1,6 +1,8 @@
 package products;
 
-public abstract class ItUserDevices extends Product implements Comparable<ItUserDevices>{
+public abstract class ItUserDevices extends Product {
+	private static int idIUDIndex = 1;
+	private int idIUD;
     private String processorType;
     private String processorFrequency;
     private String HDDCapacity;
@@ -16,11 +18,12 @@ public abstract class ItUserDevices extends Product implements Comparable<ItUser
     private String operatingSystem;
     private String others;
 
-    public ItUserDevices(int idProduct, String brand, float weight, String dimensions, String colour, int price, String processorType,
+    public ItUserDevices(String productName, String brand, float weight, String dimensions, String colour, int price, String processorType,
                          String processorFrequency, String HDDCapacity, String RAMMemory, String displayType,
                          float diagonal, String wireless, String bluetooth, String ports,
                          String audio, String camera, String battery, String operatingSystem) {
-        super(idProduct, brand, weight, dimensions, colour, price);
+        super(productName, brand, weight, dimensions, colour, price);
+        this.idIUD = idIUDIndex;
         this.processorType = processorType;
         this.processorFrequency = processorFrequency;
         this.HDDCapacity = HDDCapacity;
@@ -34,19 +37,11 @@ public abstract class ItUserDevices extends Product implements Comparable<ItUser
         this.camera = camera;
         this.battery = battery;
         this.operatingSystem = operatingSystem;
+        idIUDIndex++;
     }
     
     public String getRAMMemory() {
     	return this.RAMMemory;
-    }
-    
-    public int compareTo(ItUserDevices iud) {
-    	if(this.getPrice() == iud.getPrice())
-    		return 0;
-    	else if(this.getPrice() < iud.getPrice())
-    		return -1;
-    	else
-    		return 1;
     }
     
 //    public static int stringCompare(String str1, String str2)

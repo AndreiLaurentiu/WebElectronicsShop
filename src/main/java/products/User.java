@@ -42,4 +42,8 @@ public abstract class User implements Comparable<User>{
 		return idUser;
 	}
 	
+	public String getUsername() {
+		return username;
+	}
+	
 }
