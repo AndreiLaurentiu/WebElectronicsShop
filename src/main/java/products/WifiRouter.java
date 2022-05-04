@@ -25,8 +25,8 @@ public class WifiRouter extends Networking{
                       String management, String powerSupply, String transferSpeed, String standard80211ac, String connectors,
                       String usb, String transferRate, String frequency, String security,
                       String compatibility3g4g, String others, String antenna, String gigabyte, String wirelessFrequency,
-                      String supportedProtocols, String transmissionPower, String simSupport, String specialCharacteristics) {
-        super(productName, brand, weight, dimensions, colour, price, ports, standards, management, powerSupply, transferSpeed);
+                      String supportedProtocols, String transmissionPower, String simSupport, String specialCharacteristics, String imageURL) {
+        super(productName, brand, weight, dimensions, colour, price, ports, standards, management, powerSupply, transferSpeed, imageURL);
         this.idWifiRouter = idWifiRouterIndex;
         this.standard80211ac = standard80211ac;
         this.connectors = connectors;

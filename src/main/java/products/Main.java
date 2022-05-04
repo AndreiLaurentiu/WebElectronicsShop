@@ -26,13 +26,13 @@ public class Main {
     											+ "37 Whr\r\n"
     											+ "Lithium Ion", "None included", "6W", "4MB", "Intel UHD Graphics",
     											"Integrated", "Without Touchscreen", "1920 x 1080", "1 x Slot M2", 
-    											"microSD", "yes", "no");
+    											"microSD", "yes", "no", "https://s1.cel.ro/images/Products/2021/08/05/Laptop-ASUS-X515MA-Intel-Celeron-N4020-256GB-SSD-4GB-FullHD-Transparent-Silver.jpg");
     	Phone phone1 = new Phone("APPLE IPHONE 6S 32GB", "Apple", 0.143f, "138.3 x 67.1 x 7.1 mm", "black", 600, "A9 chip with 64-bit architecture", "-", 
     			"32GB", "2GB", "Touchscreen Capacitiv", 4.7f, "Wi Fi", "4.2, A2DP, LE", "Lightning connector 3.5 mm jack", "Speaker", "primary camera resolution 12", "Li-Po 1715 mAh battery (6.9 Wh), fixed", "iOS 9", "no", "no", "with 3G",
-    					"with 4G", "yes", "802.11 a/b/g/n/ac, dual-band, hotspot", "-", "750 x 1334 pixels (~326 ppi pixel density)", "without card", "Accelerometer, gyro, proximity, compass, barometer");
+    					"with 4G", "yes", "802.11 a/b/g/n/ac, dual-band, hotspot", "-", "750 x 1334 pixels (~326 ppi pixel density)", "without card", "Accelerometer, gyro, proximity, compass, barometer", "https://s1.cel.ro/images/Products/telefon-mobil-apple-iphone-6s-32gb-space-grey.jpg");
     	Phone phone2 = new Phone("APPLE IPHONE 6S 64GB", "Apple", 0.143f, "138.3 x 67.1 x 7.1 mm", "black", 800, "A9 chip with 64-bit architecture", "-", 
     			"64GB", "2GB", "Touchscreen Capacitiv", 4.7f, "Wi Fi", "4.2, A2DP, LE", "Lightning connector 3.5 mm jack", "Speaker", "primary camera resolution 12", "Li-Po 1715 mAh battery (6.9 Wh), fixed", "iOS 9", "no", "no", "with 3G",
-    					"with 4G", "yes", "802.11 a/b/g/n/ac, dual-band, hotspot", "-", "750 x 1334 pixels (~326 ppi pixel density)", "without card", "Accelerometer, gyro, proximity, compass, barometer");
+    					"with 4G", "yes", "802.11 a/b/g/n/ac, dual-band, hotspot", "-", "750 x 1334 pixels (~326 ppi pixel density)", "without card", "Accelerometer, gyro, proximity, compass, barometer", "https://s1.cel.ro/images/Products/telefon-mobil-apple-iphone-6s-32gb-space-grey.jpg");
     
     	
     	

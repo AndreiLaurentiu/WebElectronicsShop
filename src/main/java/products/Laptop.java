@@ -20,9 +20,9 @@ public class Laptop extends ItUserDevices{
                   String camera, String battery, String operatingSystem, String powerConsumed, String cacheMemory,
                   String chipsetVideo, String videoRamMemory, String touchscreen,
                   String optimalResolution, String slots, String cardReader, String numericalKeyboard,
-                  String illuminatedKeyboard) {
+                  String illuminatedKeyboard, String imageURL) {
         super(productName, brand, weight, dimensions, colour, price, processorType, processorFrequency, HDDCapacity, RAMMemory, displayType, diagonal, wireless, 
-        		bluetooth, ports, audio, camera, battery, operatingSystem);
+        		bluetooth, ports, audio, camera, battery, operatingSystem, imageURL);
         this.idLaptop = idLaptopIndex;
         this.powerConsumed = powerConsumed;
         this.cacheMemory = cacheMemory;

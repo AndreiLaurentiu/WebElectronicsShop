@@ -27,8 +27,8 @@ public class TV extends Product{
               String curbed, String imageCharacteristics, String soundCharacteristics, String integratedSpeaker,
               String connector, String hdmiInputs, String bluetooth, String usbInput, String ciSlot,
               String smartTVFunctions, String powerConsumption,
-              String includedAccessories, String others, String tuner) {
-        super(productName, brand, weight, dimensions, colour, price);
+              String includedAccessories, String others, String tuner, String imageURL) {
+        super(productName, brand, weight, dimensions, colour, price, imageURL);
         this.idTV = idTVIndex;
         this.diagonal = diagonal;
         this.displayType = displayType;

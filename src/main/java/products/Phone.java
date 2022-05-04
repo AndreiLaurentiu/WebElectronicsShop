@@ -18,9 +18,9 @@ public class Phone extends ItUserDevices{
                  String HDDCapacity, String RAMMemory, String displayType, float diagonal, String wireless, String bluetooth,
                  String ports, String audio, String camera, String battery, String operatingSystem, String dualSim, String network2g,
                  String network3g, String network4g, String gps, String wlan,
-                 String nfc, String resolution, String memorySlot, String sensors) {
+                 String nfc, String resolution, String memorySlot, String sensors, String imageURL) {
         super(productName, brand, weight, dimensions, colour, price, processorType, processorFrequency, HDDCapacity, RAMMemory, displayType, diagonal, 
-        		wireless, bluetooth, ports, audio, camera, battery, operatingSystem);
+        		wireless, bluetooth, ports, audio, camera, battery, operatingSystem, imageURL);
         this.idPhone = idPhoneIndex;
         this.dualSim = dualSim;
         this.network2g = network2g;

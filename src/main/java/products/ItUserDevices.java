@@ -21,8 +21,8 @@ public abstract class ItUserDevices extends Product {
     public ItUserDevices(String productName, String brand, float weight, String dimensions, String colour, int price, String processorType,
                          String processorFrequency, String HDDCapacity, String RAMMemory, String displayType,
                          float diagonal, String wireless, String bluetooth, String ports,
-                         String audio, String camera, String battery, String operatingSystem) {
-        super(productName, brand, weight, dimensions, colour, price);
+                         String audio, String camera, String battery, String operatingSystem, String imageURL) {
+        super(productName, brand, weight, dimensions, colour, price, imageURL);
         this.idIUD = idIUDIndex;
         this.processorType = processorType;
         this.processorFrequency = processorFrequency;

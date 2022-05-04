@@ -1,5 +1,6 @@
 package products;
 
+
 public abstract class Product implements Comparable<ItUserDevices>{
 	private static int idProductIndex = 1;
     private int idProduct;
@@ -9,7 +10,9 @@ public abstract class Product implements Comparable<ItUserDevices>{
     private String dimensions;
     private String colour;
     private int price;
-    public Product(String productName, String brand, float weight, String dimensions, String colour, int price) {
+    private String image;
+    
+    public Product(String productName, String brand, float weight, String dimensions, String colour, int price, String imageURL) {
         this.idProduct = idProductIndex;
         this.productName = productName;
         this.brand = brand;
@@ -17,6 +20,7 @@ public abstract class Product implements Comparable<ItUserDevices>{
         this.dimensions = dimensions;
         this.colour = colour;
         this.price = price;
+        this.setImage(imageURL);
         idProductIndex++;
     }
     
@@ -56,4 +60,12 @@ public abstract class Product implements Comparable<ItUserDevices>{
     	else
     		return 1;
     }
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 }

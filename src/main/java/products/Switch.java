@@ -11,8 +11,8 @@ public class Switch extends Networking{
 
     public Switch(String productName, String brand, int weight, String dimensions, String colour, int price, String ports,
                   String standards, String management, String powerSupply, String transferSpeed,
-                  String connectivity, String poe, String ledIndicators, String rackMountable, String macTable) {
-        super(productName, brand, weight, dimensions, colour, price, ports, standards, management, powerSupply, transferSpeed);
+                  String connectivity, String poe, String ledIndicators, String rackMountable, String macTable, String imageURL) {
+        super(productName, brand, weight, dimensions, colour, price, ports, standards, management, powerSupply, transferSpeed, imageURL);
         this.idSwitch = idSwitchIndex;
         this.connectivity = connectivity;
         this.poe = poe;
