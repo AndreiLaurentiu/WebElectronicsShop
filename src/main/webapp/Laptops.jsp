@@ -46,7 +46,7 @@ body {
     <div class="col">
       <div class="card" style="width: 18rem;">
   <img class="card-img-top" src=${laptop.image}>
-  <p class="card-text"></p>
+  <p class="card-text">Price:${laptop.price }</p>
   <div class="card-body">
   <a href="#" class="btn btn-primary">${laptop.productName}</a>
   </div>

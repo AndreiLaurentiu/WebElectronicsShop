@@ -18,6 +18,7 @@ public class LaptopsServlet extends HttpServlet{
 	
 private static final long serialVersionUID = 1L;
 	
+	// just testing the web interface with some duplicate objects
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		Laptop laptop1 = new Laptop("ASUS X515MA", "Asus", 2, "36.02 cm x 23.49 cm x 1.99 cm", "grey",1200, "Intel Celeron N4020",
 				"1.10GHz", "256GB", "4GB", "45% NTSC\r\n"

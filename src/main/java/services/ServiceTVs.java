@@ -1,37 +1,45 @@
 package services;
 
+import java.util.Comparator;
+
 import java.util.LinkedList;
 import java.util.function.Predicate;
 
+import daos.TVDao;
 import products.TV;
 
 public class ServiceTVs {
-LinkedList<TV> listTVs = new LinkedList<>();
+	private TVDao tvdao = new TVDao();
 	
 	
-	public void addSwitch(TV TV) {
-        listTVs.add(TV);
+	public void addTV(TV tv) {
+        tvdao.save(tv);
     }
 	
 	public void printListTVs() {
-        listTVs.forEach(System.out::println);
+        tvdao.getAll().forEach(System.out::println);
     }
 	
 	public void printListTVsByPrice() {
-        listTVs.stream()
+		tvdao.getAll().stream()
                 .sorted((p1,p2) -> p1.getPrice() - p2.getPrice())
                 .forEach(System.out::println);
     }
 	
-	public void removeTVByIndex(int i) {
-        listTVs.remove(i);
+	public void removeTVByIndex(int index) {
+		tvdao.deleteByIndex(index);
     }
     public void removeTVByBrand(String brand) {
-        Predicate<TV> filter = (TV b) -> (b.getBrand().equalsIgnoreCase(brand));
-        listTVs.removeIf(filter);
+        tvdao.deleteTVByBrand(brand);
     }
     
-    public LinkedList<TV> getArrayOfPhones(){
-    	return listTVs;
+   public void printListTVsByBrand() {
+	   tvdao.getAll().stream()
+	.sorted(Comparator.comparing(TV::getBrand))
+	.forEach(System.out::println);
+   }
+    
+    public LinkedList<TV> getTVs(){
+    	return tvdao.getAll();
     }
 }

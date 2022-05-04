@@ -16,7 +16,7 @@ public class Admin extends User{
     
     public BasicUser createBasicUser() {
     	//TODO: here I will fetch the info from the web interface
-    	BasicUser user = null;
+    	BasicUser user = new BasicUser(15, "emailAddress", "emailAddress", "emailAddress");
     	return user;
     }
     

@@ -27,6 +27,18 @@ public class Main {
     											+ "Lithium Ion", "None included", "6W", "4MB", "Intel UHD Graphics",
     											"Integrated", "Without Touchscreen", "1920 x 1080", "1 x Slot M2", 
     											"microSD", "yes", "no", "https://s1.cel.ro/images/Products/2021/08/05/Laptop-ASUS-X515MA-Intel-Celeron-N4020-256GB-SSD-4GB-FullHD-Transparent-Silver.jpg");
+    	Laptop laptop2 = new Laptop("ASUS X515MA", "Bsus", 2, "36.02 cm x 23.49 cm x 1.99 cm", "grey",1200, "Intel Celeron N4020",
+    			"1.10GHz", "256GB", "4GB", "45% NTSC\r\n"
+    					+ "Anti-Glare\r\n"
+    					+ "LED\r\n"
+    					+ "Luminosity 200 Niti\r\n"
+    					+ "Truelife", 15.6f, "802.11a/b/g/n/ac", "Bluetooth 4.1", "2 x USB 2.0, 1 x HDMI, "
+    							+ "Microphone", "Stereo Speackers\r\n"
+    									+ "Technology ASUS SonicMaster", "VGA", "2 cells\r\n"
+    											+ "37 Whr\r\n"
+    											+ "Lithium Ion", "None included", "6W", "4MB", "Intel UHD Graphics",
+    											"Integrated", "Without Touchscreen", "1920 x 1080", "1 x Slot M2", 
+    											"microSD", "yes", "no", "https://s1.cel.ro/images/Products/2021/08/05/Laptop-ASUS-X515MA-Intel-Celeron-N4020-256GB-SSD-4GB-FullHD-Transparent-Silver.jpg");
     	Phone phone1 = new Phone("APPLE IPHONE 6S 32GB", "Apple", 0.143f, "138.3 x 67.1 x 7.1 mm", "black", 600, "A9 chip with 64-bit architecture", "-", 
     			"32GB", "2GB", "Touchscreen Capacitiv", 4.7f, "Wi Fi", "4.2, A2DP, LE", "Lightning connector 3.5 mm jack", "Speaker", "primary camera resolution 12", "Li-Po 1715 mAh battery (6.9 Wh), fixed", "iOS 9", "no", "no", "with 3G",
     					"with 4G", "yes", "802.11 a/b/g/n/ac, dual-band, hotspot", "-", "750 x 1334 pixels (~326 ppi pixel density)", "without card", "Accelerometer, gyro, proximity, compass, barometer", "https://s1.cel.ro/images/Products/telefon-mobil-apple-iphone-6s-32gb-space-grey.jpg");
@@ -37,7 +49,9 @@ public class Main {
     	
     	
     	ServiceLaptops servicelaptops = new ServiceLaptops();
+    	servicelaptops.addLaptop(laptop2);
     	servicelaptops.addLaptop(laptop1);
+    	servicelaptops.printListLaptopsByBrand();
     	servicelaptops.printListLaptops();
     	ServicePhones servicephones = new ServicePhones();
     	servicephones.addPhone(phone2);
@@ -51,6 +65,7 @@ public class Main {
     	basicUsers.add(user2);
     	basicUsers.add(user1);
     	admin.deleteUserByName("Laur", basicUsers);
+    	basicUsers.add(admin.createBasicUser());
     	System.out.println(basicUsers);
     	
     	
