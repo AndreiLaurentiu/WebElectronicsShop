@@ -14,7 +14,7 @@ public class Laptop extends ItUserDevices{
     private String numericalKeyboard;
     private String illuminatedKeyboard;
 
-    public Laptop(String productName, String brand, int weight, String dimensions, String colour, int price, String processorType,
+    public Laptop(String productName, String brand, float weight, String dimensions, String colour, int price, String processorType,
                   String processorFrequency, String HDDCapacity, String RAMMemory, String displayType,
                   float diagonal, String wireless, String bluetooth, String ports, String audio,
                   String camera, String battery, String operatingSystem, String powerConsumed, String cacheMemory,

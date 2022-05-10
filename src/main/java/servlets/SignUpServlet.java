@@ -2,8 +2,9 @@ package servlets;
 
 import java.io.IOException;
 
+
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import jakarta.servlet.annotation.WebServlet;
@@ -27,8 +28,7 @@ public class SignUpServlet extends HttpServlet{
 		String email = request.getParameter("Email");
 		
 		ServiceBasicUser serviceBasicUser = new ServiceBasicUser();
-		List<BasicUser> list = new ArrayList<>(serviceBasicUser.getBasicUsers().size());
-		Collections.addAll(list, (BasicUser[])serviceBasicUser.getBasicUsers().toArray());
+		List<BasicUser> list = new ArrayList<BasicUser>(serviceBasicUser.getBasicUsers());
 		
 		String duplicateCredentialErrorMessage = null;
 		

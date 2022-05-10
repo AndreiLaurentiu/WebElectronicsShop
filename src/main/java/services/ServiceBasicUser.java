@@ -36,7 +36,7 @@ public class ServiceBasicUser {
 	    TreeSet<BasicUser> basicUsers = basicuserdao.getAll();
 	    int counter = 0;
  		for(BasicUser basicUser : basicUsers) {
- 			if(basicUser.getEmail().equals(name))
+ 			if(basicUser.getUsername().equals(name))
  				basicuserdao.update(counter, "email", newEmail);
  			counter++;
  		}

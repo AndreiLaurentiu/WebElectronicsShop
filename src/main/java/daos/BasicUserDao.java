@@ -2,7 +2,6 @@ package daos;
 
 import java.util.ArrayList;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -20,22 +19,22 @@ private TreeSet<BasicUser> setBasicUsers = new TreeSet<>();
 	}
 	
 	public void update(int index, String attribute, String newValue) {
-		List<BasicUser> users = new ArrayList<>(setBasicUsers.size());
-		Collections.addAll(users, (BasicUser[])setBasicUsers.toArray());
+		List<BasicUser> list = new ArrayList<BasicUser> (this.setBasicUsers);
 		
 		switch(attribute) {
 		
 		case "username":
-			users.get(index).setUsername(newValue);
+			list.get(index).setUsername(newValue);
 			break;
 		case "email":
-			users.get(index).setEmail(newValue);
+			list.get(index).setEmail(newValue);
 			break;
 		default:
 			System.out.println("Nothing to update");
 			break;
 		}
 		
+		this.setBasicUsers = new TreeSet<BasicUser>(list);
 	}
 	
 	public TreeSet<BasicUser> getAll() {

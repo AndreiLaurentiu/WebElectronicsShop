@@ -1,5 +1,7 @@
 package models;
 
+import csvs.ReadCSV;
+
 import services.ServiceBasicUser;
 import services.ServiceLaptops;
 import services.ServicePhones;
@@ -54,14 +56,27 @@ public class Main {
     	servicephones.printListPhonesByPrice();
     	servicephones.removePhoneByIndex(1);
     	servicephones.printListPhones();
-    	
+   	
     	ServiceBasicUser serviceBasicUser = new ServiceBasicUser();
     	Admin admin = new Admin("Gabi", "123456", "admin1@gmail.com");
     	admin.createBasicUser(user2);
     	admin.createBasicUser(user1);
     	System.out.println(serviceBasicUser.getBasicUsers());
-    	
-    	
+		
+		ServiceBasicUser serviceUsers = new ServiceBasicUser();
+		BasicUser user11 = new BasicUser("Andrei", "pass1", "andrei@gmail.com");
+		serviceUsers.addBasicUser(user11);
+		serviceUsers.updateEmailByName("Andrei", "New@gmail.cmo");
+		serviceUsers.printListBasicUsers();
+		serviceUsers.removeBasicUserByName("Andrei");
+		System.out.println("\\");
+		serviceUsers.printListBasicUsers();
+		
+		ServiceLaptops servicelaptops1 = new ServiceLaptops();
+		ReadCSV loader = ReadCSV.getInstance();
+   	    ReadCSV.loadClasses(servicelaptops1);
+    	servicelaptops1.printListLaptops();
+		
     }
     
 }
