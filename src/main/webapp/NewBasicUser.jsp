@@ -1,20 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Account</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<title>New Account Message</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> 
 </head>
 <body>
-<% response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); 
 
-	if(session.getAttribute("Username")==null)
-		response.sendRedirect("login.jsp");
-		%>
-		
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -31,8 +27,14 @@
 
 <br>
 <br>
-		
-Welcome ${Username}
+
+<c:if test="${empty duplicateCredentialErrorMessage}">
+Account created with success! Login to start purchasing.
+</c:if>
+
+<c:if test="${not empty duplicateCredentialErrorMessage}">
+    ${duplicateCredentialErrorMessage }.
+</c:if>
 
 </body>
 </html>

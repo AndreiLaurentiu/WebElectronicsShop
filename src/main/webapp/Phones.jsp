@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="products.Laptop" %>
+<%@ page import="products.Phone" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> 
 <style>
 body {
-  background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-021.jpg");
+  background-image: url("https://wallpaperaccess.com/full/3024426.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -39,19 +39,20 @@ body {
 <div class="container">
   <div class="row align-items-start">
 <c:set var="matrixLength" value="3"/>
-<c:forEach items="${laptops}" var="laptop" varStatus="loopStatus">
+<c:forEach items="${phones}" var="phone" varStatus="loopStatus">
 <c:if test="${(loopStatus.index % matrixLength) == 0 && (loopStatus.index != 0) }">
 <br>
 </c:if>
     <div class="col">
       <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=${laptop.image}>
-  <p class="card-text">Price:${laptop.price }</p>
+  <img class="card-img-top" src=${phone.image}>
+  <p class="card-text">Price:${phone.price }</p>
   <div class="card-body">
-  <a href="#" class="btn btn-primary">${laptop.productName}</a>
+  <a href="#" class="btn btn-primary">${phone.productName}</a>
   </div>
   
-</div><br>
+</div>
+<br>
     </div>
    
    

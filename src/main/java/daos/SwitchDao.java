@@ -1,9 +1,8 @@
 package daos;
 
 import java.util.LinkedList;
-import java.util.function.Predicate;
 
-import products.Switch;
+import models.Switch;
 
 public class SwitchDao {
 private LinkedList<Switch> listSwitches = new LinkedList<>();
@@ -12,14 +11,25 @@ private LinkedList<Switch> listSwitches = new LinkedList<>();
         listSwitches.add(Switch);
     }
 	
-	public void deleteByIndex(int index) {
+	public void delete(int index) {
 		listSwitches.remove(index);
 	}
 	
-	public void deleteSwitchByBrand(String brand) {
-        Predicate<Switch> filter = (Switch b) -> (b.getBrand().equalsIgnoreCase(brand));
-        listSwitches.removeIf(filter);
-    }
+	public void update(int index, String attribute, String newValue) {
+		switch(attribute) {
+		
+		case "price":
+			listSwitches.get(index).setPrice(Integer.parseInt(newValue));
+			break;
+		case "name":
+			listSwitches.get(index).setProductName(newValue);
+			break;
+		default:
+			System.out.println("Nothing to update");
+			break;
+		}
+		
+	}
 	
 	public LinkedList<Switch> getAll() {
         return listSwitches;

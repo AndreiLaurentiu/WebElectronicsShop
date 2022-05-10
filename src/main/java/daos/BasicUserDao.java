@@ -1,28 +1,45 @@
 package daos;
 
-import java.util.LinkedList;
-import java.util.function.Predicate;
+import java.util.ArrayList;
 
-import products.BasicUser;
+import java.util.Collections;
+import java.util.List;
+import java.util.TreeSet;
+
+import models.BasicUser;
 
 public class BasicUserDao {
-private LinkedList<BasicUser> listBasicUsers = new LinkedList<>();
+private TreeSet<BasicUser> setBasicUsers = new TreeSet<>();
 	
 	public void save(BasicUser basicuser) {
-        listBasicUsers.add(basicuser);
+        setBasicUsers.add(basicuser);
     }
 	
-	public void deleteByIndex(int index) {
-		listBasicUsers.remove(index);
+	public void delete(BasicUser basicuser) {
+		setBasicUsers.remove(basicuser);
 	}
 	
-	public void deleteBasicUserByName(String brand) {
-        Predicate<BasicUser> filter = (BasicUser b) -> (b.getUsername().equalsIgnoreCase(brand));
-        listBasicUsers.removeIf(filter);
-    }
+	public void update(int index, String attribute, String newValue) {
+		List<BasicUser> users = new ArrayList<>(setBasicUsers.size());
+		Collections.addAll(users, (BasicUser[])setBasicUsers.toArray());
+		
+		switch(attribute) {
+		
+		case "username":
+			users.get(index).setUsername(newValue);
+			break;
+		case "email":
+			users.get(index).setEmail(newValue);
+			break;
+		default:
+			System.out.println("Nothing to update");
+			break;
+		}
+		
+	}
 	
-	public LinkedList<BasicUser> getAll() {
-        return listBasicUsers;
+	public TreeSet<BasicUser> getAll() {
+        return setBasicUsers;
     }
 
 }

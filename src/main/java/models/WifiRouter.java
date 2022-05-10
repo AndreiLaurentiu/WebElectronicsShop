@@ -1,4 +1,4 @@
-package products;
+package models;
 
 public class WifiRouter extends Networking{
 	private static int idWifiRouterIndex = 1;
@@ -21,7 +21,7 @@ public class WifiRouter extends Networking{
     private String others;
 
 
-    public WifiRouter(String productName, String brand, int weight, String dimensions, String colour, int price, String ports, String standards,
+    public WifiRouter(String productName, String brand, float weight, String dimensions, String colour, int price, String ports, String standards,
                       String management, String powerSupply, String transferSpeed, String standard80211ac, String connectors,
                       String usb, String transferRate, String frequency, String security,
                       String compatibility3g4g, String others, String antenna, String gigabyte, String wirelessFrequency,

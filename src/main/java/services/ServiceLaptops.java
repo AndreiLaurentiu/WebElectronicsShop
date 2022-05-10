@@ -2,10 +2,12 @@ package services;
 
 import java.util.Comparator;
 
+
+
 import java.util.LinkedList;
 
 import daos.LaptopDao;
-import products.Laptop;
+import models.Laptop;
 
 public class ServiceLaptops {
 	private LaptopDao laptopdao = new LaptopDao();
@@ -26,10 +28,21 @@ public class ServiceLaptops {
     }
 	
 	public void removeLaptopByIndex(int index) {
-		laptopdao.deleteByIndex(index);
+		laptopdao.delete(index);
     }
+	
+	public void removeLaptopByName(String name) {
+		LinkedList<Laptop> laptops = laptopdao.getAll();
+    	for(Laptop laptop : laptops)
+        	if(laptop.getProductName().equals(name))
+        		laptopdao.delete(laptops.indexOf(laptop));
+    }
+	
     public void removeLaptopByBrand(String brand) {
-        laptopdao.deleteLaptopByBrand(brand);
+    	LinkedList<Laptop> laptops = laptopdao.getAll();
+    	for(Laptop laptop : laptops)
+        	if(laptop.getBrand().equals(brand))
+        		laptopdao.delete(laptops.indexOf(laptop));
     }
     
    public void printListLaptopsByBrand() {
@@ -37,6 +50,20 @@ public class ServiceLaptops {
 	.sorted(Comparator.comparing(Laptop::getBrand))
 	.forEach(System.out::println);
    }
+   
+   public void updatePriceByName(String name, int newPrice) {
+	    LinkedList<Laptop> laptops = laptopdao.getAll();
+  		for(Laptop laptop : laptops)
+  			if(laptop.getProductName().equals(name))
+  				laptopdao.update(laptops.indexOf(laptop), "price", Integer.toString(newPrice));
+  }
+  
+  public void updateProductNameByName(String name, String newProductName) {
+	    LinkedList<Laptop> laptops = laptopdao.getAll();
+ 		for(Laptop laptop : laptops)
+ 			if(laptop.getProductName().equals(name))
+ 				laptopdao.update(laptops.indexOf(laptop), "name", newProductName);
+ }
     
     public LinkedList<Laptop> getArrayOfLaptops(){
     	return laptopdao.getAll();

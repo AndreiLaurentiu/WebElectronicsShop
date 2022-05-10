@@ -35,7 +35,7 @@
   <img class="card-img-top" src="https://www.cisco.com/c/dam/assets/prod/product-selector/switches/img/cisco_nexus_9300_series-600x400.png">
   <p class="card-text"></p>
   <div class="card-body">
-  <a href="ItUserDevices.jsp" class="btn btn-primary">Switches</a>
+  <a href="Switches" class="btn btn-primary">Switches</a>
   </div>
   
 </div>
@@ -47,7 +47,7 @@
     <p class="card-text"></p>
     <div class="btn-group">
   
-    <a href="#" class="btn btn-primary">Wi-Fi Routers</a>
+    <a href="WifiRouters" class="btn btn-primary">Wi-Fi Routers</a>
 </div>
     
   </div>

@@ -1,4 +1,4 @@
-package products;
+package models;
 
 public class Switch extends Networking{
 	private static int idSwitchIndex = 1;
@@ -9,7 +9,7 @@ public class Switch extends Networking{
     String rackMountable;
     String macTable;
 
-    public Switch(String productName, String brand, int weight, String dimensions, String colour, int price, String ports,
+    public Switch(String productName, String brand, float weight, String dimensions, String colour, int price, String ports,
                   String standards, String management, String powerSupply, String transferSpeed,
                   String connectivity, String poe, String ledIndicators, String rackMountable, String macTable, String imageURL) {
         super(productName, brand, weight, dimensions, colour, price, ports, standards, management, powerSupply, transferSpeed, imageURL);

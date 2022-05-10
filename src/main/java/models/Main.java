@@ -1,19 +1,14 @@
-package products;
+package models;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-
+import services.ServiceBasicUser;
 import services.ServiceLaptops;
 import services.ServicePhones;
 
 public class Main {
 	public static void main(String[] args) {
     	
-    	BasicUser user1 = new BasicUser(1, "Andrei", "pass1", "andrei@gmail.com");
-    	BasicUser user2 = new BasicUser(2, "Laur", "pass2", "laur@gmail.com");
+    	BasicUser user1 = new BasicUser("Andrei", "pass1", "andrei@gmail.com");
+    	BasicUser user2 = new BasicUser("Laur", "pass2", "laur@gmail.com");
     	
     	Laptop laptop1 = new Laptop("ASUS X515MA", "Asus", 2, "36.02 cm x 23.49 cm x 1.99 cm", "grey",1200, "Intel Celeron N4020",
     			"1.10GHz", "256GB", "4GB", "45% NTSC\r\n"
@@ -60,13 +55,11 @@ public class Main {
     	servicephones.removePhoneByIndex(1);
     	servicephones.printListPhones();
     	
-    	HashSet<BasicUser> basicUsers = new HashSet<>();
-    	Admin admin = new Admin(1, "Gabi", "123456", "admin1@gmail.com");
-    	basicUsers.add(user2);
-    	basicUsers.add(user1);
-    	admin.deleteUserByName("Laur", basicUsers);
-    	basicUsers.add(admin.createBasicUser());
-    	System.out.println(basicUsers);
+    	ServiceBasicUser serviceBasicUser = new ServiceBasicUser();
+    	Admin admin = new Admin("Gabi", "123456", "admin1@gmail.com");
+    	admin.createBasicUser(user2);
+    	admin.createBasicUser(user1);
+    	System.out.println(serviceBasicUser.getBasicUsers());
     	
     	
     }

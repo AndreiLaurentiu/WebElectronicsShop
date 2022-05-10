@@ -1,4 +1,4 @@
-package products;
+package models;
 
 public class TV extends Product{
 	private static int idTVIndex = 1;
@@ -22,7 +22,7 @@ public class TV extends Product{
     private String others;
     private String tuner;
 
-    public TV(String productName, String brand, int weight, String dimensions, String colour, int price,
+    public TV(String productName, String brand,  float weight, String dimensions, String colour, int price,
               String diagonal, String displayType, String resolution, String screenResolution,
               String curbed, String imageCharacteristics, String soundCharacteristics, String integratedSpeaker,
               String connector, String hdmiInputs, String bluetooth, String usbInput, String ciSlot,

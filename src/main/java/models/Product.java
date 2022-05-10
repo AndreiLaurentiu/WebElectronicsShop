@@ -1,4 +1,4 @@
-package products;
+package models;
 
 
 public abstract class Product implements Comparable<ItUserDevices>{
@@ -68,4 +68,14 @@ public abstract class Product implements Comparable<ItUserDevices>{
 	public void setImage(String image) {
 		this.image = image;
 	}
+	
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	
+	
 }

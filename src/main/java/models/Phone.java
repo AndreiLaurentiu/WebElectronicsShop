@@ -1,4 +1,4 @@
-package products;
+package models;
 
 public class Phone extends ItUserDevices{
 	private static int idPhoneIndex = 1;

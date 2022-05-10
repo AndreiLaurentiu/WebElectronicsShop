@@ -1,16 +1,17 @@
 package services;
 
 import java.util.Comparator;
-import java.util.LinkedList;
+
+import java.util.TreeSet;
 
 import daos.BasicUserDao;
-import products.BasicUser;
+import models.BasicUser;
 
 public class ServiceBasicUser {
 	private BasicUserDao basicuserdao = new BasicUserDao();
 	
 	
-	public void addLaptop(BasicUser user) {
+	public void addBasicUser(BasicUser user) {
 		basicuserdao.save(user);
     }
 	
@@ -18,11 +19,11 @@ public class ServiceBasicUser {
 		basicuserdao.getAll().forEach(System.out::println);
     }
 	
-	public void removeBasicUserByIndex(int index) {
-		basicuserdao.deleteByIndex(index);
-    }
     public void removeBasicUserByName(String username) {
-    	basicuserdao.deleteBasicUserByName(username);
+    	TreeSet<BasicUser> basicUsers = basicuserdao.getAll();
+    	for(BasicUser basicUser : basicUsers)
+        	if(basicUser.getUsername().equals(username))
+        		basicuserdao.delete(basicUser);
     }
     
    public void printListBasicUsersByName() {
@@ -30,8 +31,28 @@ public class ServiceBasicUser {
 	.sorted(Comparator.comparing(BasicUser::getUsername))
 	.forEach(System.out::println);
    }
+   
+   public void updateEmailByName(String name, String newEmail) {
+	    TreeSet<BasicUser> basicUsers = basicuserdao.getAll();
+	    int counter = 0;
+ 		for(BasicUser basicUser : basicUsers) {
+ 			if(basicUser.getEmail().equals(name))
+ 				basicuserdao.update(counter, "email", newEmail);
+ 			counter++;
+ 		}
+ }
+ 
+ public void updateUsernameByName(String name, String newUsername) {
+	    TreeSet<BasicUser> basicusers = basicuserdao.getAll();
+	    int counter = 0;
+		for(BasicUser basicUser : basicusers) {
+			if(basicUser.getUsername().equals(name))
+				basicuserdao.update(counter, "name", newUsername);
+			counter++;
+		}
+}
     
-    public LinkedList<BasicUser> getArrayOfBasicUsers(){
+    public TreeSet<BasicUser> getBasicUsers(){
     	return basicuserdao.getAll();
     }
 }

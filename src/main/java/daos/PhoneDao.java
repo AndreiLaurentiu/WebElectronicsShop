@@ -1,9 +1,8 @@
 package daos;
 
 import java.util.LinkedList;
-import java.util.function.Predicate;
 
-import products.Phone;
+import models.Phone;
 
 public class PhoneDao {
 private LinkedList<Phone> listPhones = new LinkedList<>();
@@ -12,14 +11,25 @@ private LinkedList<Phone> listPhones = new LinkedList<>();
         listPhones.add(phone);
     }
 	
-	public void deleteByIndex(int index) {
+	public void delete(int index) {
 		listPhones.remove(index);
 	}
 	
-	public void deleteByBrand(String brand) {
-        Predicate<Phone> filter = (Phone b) -> (b.getBrand().equalsIgnoreCase(brand));
-        listPhones.removeIf(filter);
-    }
+	public void update(int index, String attribute, String newValue) {
+		switch(attribute) {
+		
+		case "price":
+			listPhones.get(index).setPrice(Integer.parseInt(newValue));
+			break;
+		case "name":
+			listPhones.get(index).setProductName(newValue);
+			break;
+		default:
+			System.out.println("Nothing to update");
+			break;
+		}
+		
+	}
 	
 	public LinkedList<Phone> getAll() {
         return listPhones;

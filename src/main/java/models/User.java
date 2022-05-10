@@ -1,16 +1,18 @@
-package products;
+package models;
 
 public abstract class User implements Comparable<User>{
     private int idUser;
+    private static int idUserIndex = 1;
     private String username;
     private String password;
     private String emailAddress;
    
-    public User(int idUser, String username, String password, String emailAddress) {
-    	this.idUser = idUser;
+    public User(String username, String password, String emailAddress) {
+    	this.idUser = idUserIndex;
         this.username = username;
         this.password = password;
         this.emailAddress = emailAddress;
+        idUserIndex++;
     }
 
     public void addProductInOrder(Order order, Product product){
@@ -44,6 +46,22 @@ public abstract class User implements Comparable<User>{
 	
 	public String getUsername() {
 		return username;
+	}
+	
+	public String getEmail() {
+		return emailAddress;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	public void setEmail(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 	
 }

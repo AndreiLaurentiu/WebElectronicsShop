@@ -1,10 +1,12 @@
 package services;
 
 import java.util.Comparator;
+
+
 import java.util.LinkedList;
 
 import daos.SwitchDao;
-import products.Switch;
+import models.Switch;
 
 public class ServiceSwitches {
 	
@@ -12,7 +14,7 @@ public class ServiceSwitches {
 	private SwitchDao switchdao = new SwitchDao();
 
 
-	public void addLaptop(Switch Switch) {
+	public void addSwitch(Switch Switch) {
 		switchdao.save(Switch);
 	}
 
@@ -26,12 +28,19 @@ public class ServiceSwitches {
             .forEach(System.out::println);
 	}
 
-	public void removeSwitchByIndex(int index) {
-		switchdao.deleteByIndex(index);
-	}
 	public void removeSwitchByBrand(String brand) {
-		switchdao.deleteSwitchByBrand(brand);
-	}
+		LinkedList<Switch> switches = switchdao.getAll();
+  		for(Switch Switch : switches)
+  			if(Switch.getProductName().equals(brand))
+        		switchdao.delete(switches.indexOf(Switch));
+    }
+    
+    public void removeSwitchByName(String name) {
+    	LinkedList<Switch> switches = switchdao.getAll();
+  		for(Switch Switch : switches)
+  			if(Switch.getProductName().equals(name))
+        		switchdao.delete(switches.indexOf(Switch));
+    }
 
 	public void printListSwitchesByBrand() {
 		switchdao.getAll().stream()
@@ -39,7 +48,21 @@ public class ServiceSwitches {
 		.forEach(System.out::println);
 	}
 
-	public LinkedList<Switch> getArrayOfSwitches(){
+	public void updatePriceByName(String name, int newPrice) {
+	    LinkedList<Switch> switches = switchdao.getAll();
+   		for(Switch Switch : switches)
+   			if(Switch.getProductName().equals(name))
+   				switchdao.update(switches.indexOf(Switch), "price", Integer.toString(newPrice));
+   }
+   
+   public void updateProductNameByName(String name, String newProductName) {
+	    LinkedList<Switch> switches = switchdao.getAll();
+  		for(Switch Switch : switches)
+  			if(Switch.getProductName().equals(name))
+  				switchdao.update(switches.indexOf(Switch), "name", newProductName);
+  }
+	
+	public LinkedList<Switch> getSwitches(){
 		return switchdao.getAll();
 	}
 

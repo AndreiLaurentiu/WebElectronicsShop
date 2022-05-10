@@ -1,9 +1,8 @@
 package daos;
 
 import java.util.LinkedList;
-import java.util.function.Predicate;
 
-import products.WifiRouter;
+import models.WifiRouter;
 
 public class WifiRouterDao {
 private LinkedList<WifiRouter> listWifis = new LinkedList<>();
@@ -12,14 +11,25 @@ private LinkedList<WifiRouter> listWifis = new LinkedList<>();
 		listWifis.add(wifi);
     }
 	
-	public void deleteByIndex(int index) {
+	public void delete(int index) {
 		listWifis.remove(index);
 	}
 	
-	public void deleteWifiRouterByBrand(String brand) {
-        Predicate<WifiRouter> filter = (WifiRouter b) -> (b.getBrand().equalsIgnoreCase(brand));
-        listWifis.removeIf(filter);
-    }
+	public void update(int index, String attribute, String newValue) {
+		switch(attribute) {
+		
+		case "price":
+			listWifis.get(index).setPrice(Integer.parseInt(newValue));
+			break;
+		case "name":
+			listWifis.get(index).setProductName(newValue);
+			break;
+		default:
+			System.out.println("Nothing to update");
+			break;
+		}
+		
+	}
 	
 	public LinkedList<WifiRouter> getAll() {
         return listWifis;

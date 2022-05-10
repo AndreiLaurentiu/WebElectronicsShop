@@ -1,4 +1,4 @@
-package products;
+package models;
 
 public abstract class Networking extends Product{
 	private static int idNetworkingIndex = 1;
@@ -10,7 +10,7 @@ public abstract class Networking extends Product{
     private String transferSpeed;
     private String others;
 
-    public Networking(String nameProduct, String brand, int weight, String dimensions, String colour,int price, 
+    public Networking(String nameProduct, String brand, float weight, String dimensions, String colour,int price, 
                       String ports, String standards, String management, String powerSupply, String transferSpeed, String imageURL) {
         super(nameProduct, brand, weight, dimensions, colour, price, imageURL);
         this.idNetworking = idNetworkingIndex;

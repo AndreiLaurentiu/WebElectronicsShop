@@ -2,10 +2,9 @@ package services;
 
 import java.util.LinkedList;
 
-import java.util.function.Predicate;
 
 import daos.WifiRouterDao;
-import products.WifiRouter;
+import models.WifiRouter;
 
 public class ServiceWifiRouters {
 	private WifiRouterDao wifidao = new WifiRouterDao();
@@ -26,13 +25,38 @@ public class ServiceWifiRouters {
     }
 	
 	public void removeWifiRouterByIndex(int index) {
-		wifidao.deleteByIndex(index);
+		wifidao.delete(index);
     }
-    public void removeWifiRouterByBrand(String brand) {
-    	wifidao.deleteWifiRouterByBrand(brand);
+	
+	public void removeWifiRouterByBrand(String brand) {
+    	LinkedList<WifiRouter> wifis = wifidao.getAll();
+    	for(WifiRouter wifi : wifis)
+        	if(wifi.getBrand().equals(brand))
+        		wifidao.delete(wifis.indexOf(wifi));
     }
     
-    public LinkedList<WifiRouter> getArrayOfWifiRouters(){
+    public void removeWifiRouterByName(String name) {
+    	LinkedList<WifiRouter> wifis = wifidao.getAll();
+    	for(WifiRouter wifi : wifis)
+        	if(wifi.getProductName().equals(name))
+        		wifidao.delete(wifis.indexOf(wifi));
+    }
+    
+    public void updatePriceByName(String name, int newPrice) {
+	    LinkedList<WifiRouter> wifis = wifidao.getAll();
+  		for(WifiRouter wifi : wifis)
+  			if(wifi.getProductName().equals(name))
+  				wifidao.update(wifis.indexOf(wifi), "price", Integer.toString(newPrice));
+  }
+  
+  public void updateProductNameByName(String name, String newProductName) {
+	    LinkedList<WifiRouter> wifis = wifidao.getAll();
+ 		for(WifiRouter wifi : wifis)
+ 			if(wifi.getProductName().equals(name))
+ 				wifidao.update(wifis.indexOf(wifi), "name", newProductName);
+ }
+    
+    public LinkedList<WifiRouter> getWifiRouters(){
     	return wifidao.getAll();
     }
 }

@@ -35,7 +35,7 @@
   <img class="card-img-top" src="https://fdn.gsmarena.com/imgroot/news/19/12/phones-of-the-decade/-727w2/gsmarena_001.jpg">
   <p class="card-text"></p>
   <div class="card-body">
-  <a href="ItUserDevices.jsp" class="btn btn-primary">Smartphones</a>
+  <a href="Phones" class="btn btn-primary">Smartphones</a>
   </div>
   
 </div>

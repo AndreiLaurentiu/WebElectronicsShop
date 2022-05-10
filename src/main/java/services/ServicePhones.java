@@ -3,10 +3,9 @@ package services;
 import java.util.Comparator;
 
 import java.util.LinkedList;
-import java.util.function.Predicate;
 
 import daos.PhoneDao;
-import products.Phone;
+import models.Phone;
 
 public class ServicePhones {
 private PhoneDao phonedao = new PhoneDao();
@@ -27,10 +26,21 @@ private PhoneDao phonedao = new PhoneDao();
     }
 	
 	public void removePhoneByIndex(int index) {
-		phonedao.deleteByIndex(index);
+		phonedao.delete(index);
     }
+	
     public void removePhoneByBrand(String brand) {
-    	phonedao.deleteByBrand(brand);
+    	LinkedList<Phone> phones = phonedao.getAll();
+    	for(Phone phone : phones)
+        	if(phone.getBrand().equals(brand))
+        		phonedao.delete(phones.indexOf(phone));
+    }
+    
+    public void removePhoneByName(String name) {
+    	LinkedList<Phone> phones = phonedao.getAll();
+    	for(Phone phone : phones)
+        	if(phone.getProductName().equals(name))
+        		phonedao.delete(phones.indexOf(phone));
     }
     
    public void printListPhonesByBrand() {
@@ -38,6 +48,20 @@ private PhoneDao phonedao = new PhoneDao();
 	.sorted(Comparator.comparing(Phone::getBrand))
 	.forEach(System.out::println);
    }
+   
+   public void updatePriceByName(String name, int newPrice) {
+	    LinkedList<Phone> phones = phonedao.getAll();
+   		for(Phone phone : phones)
+   			if(phone.getProductName().equals(name))
+   				phonedao.update(phones.indexOf(phone), "price", Integer.toString(newPrice));
+   }
+   
+   public void updateProductNameByName(String name, String newProductName) {
+	    LinkedList<Phone> phones = phonedao.getAll();
+  		for(Phone phone : phones)
+  			if(phone.getProductName().equals(name))
+  				phonedao.update(phones.indexOf(phone), "name", newProductName);
+  }
     
     public LinkedList<Phone> getPhones(){
     	return phonedao.getAll();
