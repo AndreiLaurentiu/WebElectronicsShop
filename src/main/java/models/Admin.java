@@ -1,5 +1,7 @@
 package models;
 
+import java.io.IOException;
+
 import services.ServiceBasicUser;
 
 import services.ServiceLaptops;
@@ -35,7 +37,7 @@ public class Admin extends User{
     	
     }
     
-    public void addNewLaptop() {
+    public void addNewLaptop() throws IOException {
     	servicelaptops.addLaptop(null);
     }
     

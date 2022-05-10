@@ -1,13 +1,16 @@
 package models;
 
-import csvs.ReadCSV;
+import java.io.IOException;
 
+import csvs.Log;
+import csvs.ReadCSV;
+import csvs.WriteCSV;
 import services.ServiceBasicUser;
 import services.ServiceLaptops;
 import services.ServicePhones;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
     	
     	BasicUser user1 = new BasicUser("Andrei", "pass1", "andrei@gmail.com");
     	BasicUser user2 = new BasicUser("Laur", "pass2", "laur@gmail.com");
@@ -72,10 +75,20 @@ public class Main {
 		System.out.println("\\");
 		serviceUsers.printListBasicUsers();
 		
+		Log.clearLog();
+        Log.log("System startup");
+        
+		
 		ServiceLaptops servicelaptops1 = new ServiceLaptops();
 		ReadCSV loader = ReadCSV.getInstance();
    	    ReadCSV.loadClasses(servicelaptops1);
     	servicelaptops1.printListLaptops();
+    	servicelaptops1.removeLaptopByName("ASUS X615MA");
+    	WriteCSV writer = WriteCSV.getInstance();
+    	WriteCSV.writeToFiles(servicelaptops1);
+    	
+    	Log.log("System shutdown");
+        Log.getBw().close();
 		
     }
     

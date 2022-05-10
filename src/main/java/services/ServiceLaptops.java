@@ -1,11 +1,13 @@
 package services;
 
+import java.io.IOException;
 import java.util.Comparator;
 
 
 
 import java.util.LinkedList;
 
+import csvs.Log;
 import daos.LaptopDao;
 import models.Laptop;
 
@@ -13,7 +15,8 @@ public class ServiceLaptops {
 	private LaptopDao laptopdao = new LaptopDao();
 	
 	
-	public void addLaptop(Laptop laptop) {
+	public void addLaptop(Laptop laptop) throws IOException {
+		 Log.log("Adding laptop: " + laptop.getProductName());
         laptopdao.save(laptop);
     }
 	
@@ -31,7 +34,8 @@ public class ServiceLaptops {
 		laptopdao.delete(index);
     }
 	
-	public void removeLaptopByName(String name) {
+	public void removeLaptopByName(String name) throws IOException {
+		 Log.log("Removing laptop: " + name);
 		LinkedList<Laptop> laptops = laptopdao.getAll();
     	for(Laptop laptop : laptops)
         	if(laptop.getProductName().equals(name))

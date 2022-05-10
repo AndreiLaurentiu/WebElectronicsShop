@@ -14,7 +14,103 @@ public class Laptop extends ItUserDevices{
     private String numericalKeyboard;
     private String illuminatedKeyboard;
 
-    public Laptop(String productName, String brand, float weight, String dimensions, String colour, int price, String processorType,
+    public static int getIdLaptopIndex() {
+		return idLaptopIndex;
+	}
+
+	public static void setIdLaptopIndex(int idLaptopIndex) {
+		Laptop.idLaptopIndex = idLaptopIndex;
+	}
+
+	public int getIdLaptop() {
+		return idLaptop;
+	}
+
+	public void setIdLaptop(int idLaptop) {
+		this.idLaptop = idLaptop;
+	}
+
+	public String getPowerConsumed() {
+		return powerConsumed;
+	}
+
+	public void setPowerConsumed(String powerConsumed) {
+		this.powerConsumed = powerConsumed;
+	}
+
+	public String getCacheMemory() {
+		return cacheMemory;
+	}
+
+	public void setCacheMemory(String cacheMemory) {
+		this.cacheMemory = cacheMemory;
+	}
+
+	public String getChipsetVideo() {
+		return chipsetVideo;
+	}
+
+	public void setChipsetVideo(String chipsetVideo) {
+		this.chipsetVideo = chipsetVideo;
+	}
+
+	public String getVideoRamMemory() {
+		return videoRamMemory;
+	}
+
+	public void setVideoRamMemory(String videoRamMemory) {
+		this.videoRamMemory = videoRamMemory;
+	}
+
+	public String getTouchscreen() {
+		return touchscreen;
+	}
+
+	public void setTouchscreen(String touchscreen) {
+		this.touchscreen = touchscreen;
+	}
+
+	public String getOptimalResolution() {
+		return optimalResolution;
+	}
+
+	public void setOptimalResolution(String optimalResolution) {
+		this.optimalResolution = optimalResolution;
+	}
+
+	public String getSlots() {
+		return slots;
+	}
+
+	public void setSlots(String slots) {
+		this.slots = slots;
+	}
+
+	public String getCardReader() {
+		return cardReader;
+	}
+
+	public void setCardReader(String cardReader) {
+		this.cardReader = cardReader;
+	}
+
+	public String getNumericalKeyboard() {
+		return numericalKeyboard;
+	}
+
+	public void setNumericalKeyboard(String numericalKeyboard) {
+		this.numericalKeyboard = numericalKeyboard;
+	}
+
+	public String getIlluminatedKeyboard() {
+		return illuminatedKeyboard;
+	}
+
+	public void setIlluminatedKeyboard(String illuminatedKeyboard) {
+		this.illuminatedKeyboard = illuminatedKeyboard;
+	}
+
+	public Laptop(String productName, String brand, float weight, String dimensions, String colour, int price, String processorType,
                   String processorFrequency, String HDDCapacity, String RAMMemory, String displayType,
                   float diagonal, String wireless, String bluetooth, String ports, String audio,
                   String camera, String battery, String operatingSystem, String powerConsumed, String cacheMemory,
@@ -68,7 +164,7 @@ public class Laptop extends ItUserDevices{
                 ", weight='" + getWeight() + '\'' +
                 ", dimensions='" + getDimensions() + '\'' +
                 ", colour='" + getColour() + '\'' +
-                ", price='" + getPrice() + '\'' +
+                ", price='" + getPrice() + '\'' + ",imageURL='" + getImage() +
                 '}';
     }
 }
