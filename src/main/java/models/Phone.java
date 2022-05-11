@@ -70,5 +70,94 @@ public class Phone extends ItUserDevices{
                 ", price='" + getPrice() + '\'' +
                 '}';
     }
+
+	public int getIdPhone() {
+		return idPhone;
+	}
+
+	public void setIdPhone(int idPhone) {
+		this.idPhone = idPhone;
+	}
+
+	public String getDualSim() {
+		return dualSim;
+	}
+
+	public void setDualSim(String dualSim) {
+		this.dualSim = dualSim;
+	}
+
+	public String getNetwork2g() {
+		return network2g;
+	}
+
+	public void setNetwork2g(String network2g) {
+		this.network2g = network2g;
+	}
+
+	public String getNetwork3g() {
+		return network3g;
+	}
+
+	public void setNetwork3g(String network3g) {
+		this.network3g = network3g;
+	}
+
+	public String getNetwork4g() {
+		return network4g;
+	}
+
+	public void setNetwork4g(String network4g) {
+		this.network4g = network4g;
+	}
+
+	public String getGps() {
+		return gps;
+	}
+
+	public void setGps(String gps) {
+		this.gps = gps;
+	}
+
+	public String getWlan() {
+		return wlan;
+	}
+
+	public void setWlan(String wlan) {
+		this.wlan = wlan;
+	}
+
+	public String getNfc() {
+		return nfc;
+	}
+
+	public void setNfc(String nfc) {
+		this.nfc = nfc;
+	}
+
+	public String getResolution() {
+		return resolution;
+	}
+
+	public void setResolution(String resolution) {
+		this.resolution = resolution;
+	}
+
+	public String getMemorySlot() {
+		return memorySlot;
+	}
+
+	public void setMemorySlot(String memorySlot) {
+		this.memorySlot = memorySlot;
+	}
+
+	public String getSensors() {
+		return sensors;
+	}
+
+	public void setSensors(String sensors) {
+		this.sensors = sensors;
+	}
 	
+    
 }

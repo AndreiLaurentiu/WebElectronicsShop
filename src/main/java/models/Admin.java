@@ -29,11 +29,21 @@ public class Admin extends User{
     }
     
     public void createBasicUser(BasicUser user) {
-    	serviceBasicUsers.addBasicUser(user);
+    	try {
+			serviceBasicUsers.addBasicUser(user);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     public void deleteUserByName(String name) {
-    	serviceBasicUsers.removeBasicUserByName(name);
+    	try {
+			serviceBasicUsers.removeBasicUserByName(name);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	
     }
     
@@ -42,11 +52,21 @@ public class Admin extends User{
     }
     
     public void addNewPhone() {
-    	servicephones.addPhone(null);
+    	try {
+			servicephones.addPhone(null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     public void addNewSwitch() {
-    	serviceswitches.addSwitch(null);
+    	try {
+			serviceswitches.addSwitch(null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     public void addNewWifiRouter() {
@@ -58,7 +78,12 @@ public class Admin extends User{
     }
     
     public void deleteLaptopByName(String name) {
-    	serviceBasicUsers.removeBasicUserByName(name);
+    	try {
+			serviceBasicUsers.removeBasicUserByName(name);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	
     }
     
@@ -68,7 +93,12 @@ public class Admin extends User{
     }
     
     public void deleteSwitchByName(String name) {
-    	serviceswitches.removeSwitchByName(name);
+    	try {
+			serviceswitches.removeSwitchByName(name);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	
     }
     

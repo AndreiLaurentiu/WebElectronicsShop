@@ -8,6 +8,7 @@ import csvs.WriteCSV;
 import services.ServiceBasicUser;
 import services.ServiceLaptops;
 import services.ServicePhones;
+import services.ServiceSwitches;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
@@ -80,12 +81,15 @@ public class Main {
         
 		
 		ServiceLaptops servicelaptops1 = new ServiceLaptops();
+		ServiceSwitches serviceswitch = new ServiceSwitches();
+		ServiceBasicUser serviceUsers1 = new ServiceBasicUser();
+		ServicePhones servicephones1 = new ServicePhones();
 		ReadCSV loader = ReadCSV.getInstance();
-   	    ReadCSV.loadClasses(servicelaptops1);
+   	    ReadCSV.loadClasses(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
     	servicelaptops1.printListLaptops();
     	servicelaptops1.removeLaptopByName("ASUS X615MA");
     	WriteCSV writer = WriteCSV.getInstance();
-    	WriteCSV.writeToFiles(servicelaptops1);
+    	WriteCSV.writeToFiles(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
     	
     	Log.log("System shutdown");
         Log.getBw().close();

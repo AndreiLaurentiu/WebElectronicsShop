@@ -43,5 +43,55 @@ public class Switch extends Networking{
                 ", price='" + getPrice() + '\'' +
                 '}';
     }
+
+	public int getIdSwitch() {
+		return idSwitch;
+	}
+
+	public void setIdSwitch(int idSwitch) {
+		this.idSwitch = idSwitch;
+	}
+
+	public String getConnectivity() {
+		return connectivity;
+	}
+
+	public void setConnectivity(String connectivity) {
+		this.connectivity = connectivity;
+	}
+
+	public String getPoe() {
+		return poe;
+	}
+
+	public void setPoe(String poe) {
+		this.poe = poe;
+	}
+
+	public String getLedIndicators() {
+		return ledIndicators;
+	}
+
+	public void setLedIndicators(String ledIndicators) {
+		this.ledIndicators = ledIndicators;
+	}
+
+	public String getRackMountable() {
+		return rackMountable;
+	}
+
+	public void setRackMountable(String rackMountable) {
+		this.rackMountable = rackMountable;
+	}
+
+	public String getMacTable() {
+		return macTable;
+	}
+
+	public void setMacTable(String macTable) {
+		this.macTable = macTable;
+	}
+    
+    
     
 }

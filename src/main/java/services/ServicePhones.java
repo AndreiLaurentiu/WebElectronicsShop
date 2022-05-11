@@ -1,9 +1,11 @@
 package services;
 
+import java.io.IOException;
 import java.util.Comparator;
 
 import java.util.LinkedList;
 
+import csvs.Log;
 import daos.PhoneDao;
 import models.Phone;
 
@@ -11,7 +13,8 @@ public class ServicePhones {
 private PhoneDao phonedao = new PhoneDao();
 	
 	
-	public void addPhone(Phone phone) {
+	public void addPhone(Phone phone) throws IOException {
+		Log.log("Adding phone: " + phone.getProductName());
 		phonedao.save(phone);
     }
 	
@@ -36,7 +39,8 @@ private PhoneDao phonedao = new PhoneDao();
         		phonedao.delete(phones.indexOf(phone));
     }
     
-    public void removePhoneByName(String name) {
+    public void removePhoneByName(String name) throws IOException {
+    	Log.log("Removing phone: " + name);
     	LinkedList<Phone> phones = phonedao.getAll();
     	for(Phone phone : phones)
         	if(phone.getProductName().equals(name))

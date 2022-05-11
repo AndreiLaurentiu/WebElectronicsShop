@@ -1,9 +1,11 @@
 package services;
 
+import java.io.IOException;
 import java.util.Comparator;
 
 import java.util.TreeSet;
 
+import csvs.Log;
 import daos.BasicUserDao;
 import models.BasicUser;
 
@@ -11,7 +13,8 @@ public class ServiceBasicUser {
 	private BasicUserDao basicuserdao = new BasicUserDao();
 	
 	
-	public void addBasicUser(BasicUser user) {
+	public void addBasicUser(BasicUser user) throws IOException {
+		Log.log("Adding basic user: " + user.getUsername());
 		basicuserdao.save(user);
     }
 	
@@ -19,7 +22,8 @@ public class ServiceBasicUser {
 		basicuserdao.getAll().forEach(System.out::println);
     }
 	
-    public void removeBasicUserByName(String username) {
+    public void removeBasicUserByName(String username) throws IOException {
+    	Log.log("Removing user: " + username);
     	TreeSet<BasicUser> basicUsers = basicuserdao.getAll();
     	for(BasicUser basicUser : basicUsers)
         	if(basicUser.getUsername().equals(username))

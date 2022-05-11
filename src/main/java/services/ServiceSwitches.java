@@ -1,10 +1,12 @@
 package services;
 
+import java.io.IOException;
 import java.util.Comparator;
 
 
 import java.util.LinkedList;
 
+import csvs.Log;
 import daos.SwitchDao;
 import models.Switch;
 
@@ -14,7 +16,8 @@ public class ServiceSwitches {
 	private SwitchDao switchdao = new SwitchDao();
 
 
-	public void addSwitch(Switch Switch) {
+	public void addSwitch(Switch Switch) throws IOException {
+		Log.log("Adding switch: " + Switch.getProductName());
 		switchdao.save(Switch);
 	}
 
@@ -35,7 +38,8 @@ public class ServiceSwitches {
         		switchdao.delete(switches.indexOf(Switch));
     }
     
-    public void removeSwitchByName(String name) {
+    public void removeSwitchByName(String name) throws IOException {
+    	Log.log("Removing switch: " + name);
     	LinkedList<Switch> switches = switchdao.getAll();
   		for(Switch Switch : switches)
   			if(Switch.getProductName().equals(name))
