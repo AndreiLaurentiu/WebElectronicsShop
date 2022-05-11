@@ -103,25 +103,6 @@ public class ReadCSV {
             }
             br.close();
         }
-
-//	    private static void tv(ServiceTVs service) throws IOException {
-//            File file = new File("src/main/java/csvs/TVs.csv");
-//            FileReader fr = new FileReader(file);
-//            BufferedReader br = new BufferedReader(fr,10 *1024);
-//            String line = null;
-//            String[] tempArray = null;
-//            line = br.readLine();
-//            line = null;
-//            while((line = br.readLine()) != null) {
-//                tempArray = line.split(",");
-//                service.addTV(new TV(tempArray[0], tempArray[1], Float.parseFloat(tempArray[2].trim()), tempArray[3], tempArray[4], Integer.parseInt(tempArray[5].trim()), 
-//                        tempArray[6], tempArray[7], tempArray[8], tempArray[9], tempArray[10], tempArray[11], tempArray[12], tempArray[13],
-//                        tempArray[14], tempArray[15], tempArray[16], tempArray[17], tempArray[18], tempArray[19], tempArray[20], 
-//                        tempArray[21], tempArray[22], tempArray[23], tempArray[24]));
-//
-//            }
-//            br.close();
-//        }
 	    
 	    
         public static void loadClasses(ServiceLaptops serviceLapt, ServiceSwitches serviceSwitch, ServiceBasicUser serviceBasicUser, ServicePhones servicePhone) {
@@ -134,8 +115,6 @@ public class ReadCSV {
                 basicUsers(serviceBasicUser);
                 Log.log("Loading phones");
                 phone(servicePhone);
-//                Log.log("Loading tvs");
-//                tv(serviceTV);
             } catch (IOException e) {
 
                 e.printStackTrace();

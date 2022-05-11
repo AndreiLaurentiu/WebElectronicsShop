@@ -87,7 +87,7 @@ public class Main {
 		ReadCSV loader = ReadCSV.getInstance();
    	    ReadCSV.loadClasses(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
     	servicelaptops1.printListLaptops();
-    	servicelaptops1.removeLaptopByName("ASUS X615MA");
+//    	servicelaptops1.removeLaptopByName("ASUS X615MA");
     	WriteCSV writer = WriteCSV.getInstance();
     	WriteCSV.writeToFiles(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
     	
