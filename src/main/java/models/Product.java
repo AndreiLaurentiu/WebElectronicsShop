@@ -11,6 +11,7 @@ public abstract class Product implements Comparable<ItUserDevices>{
     private String colour;
     private int price;
     private String image;
+    private Order inOrder = null;
     
     public Product(String productName, String brand, float weight, String dimensions, String colour, int price, String imageURL) {
         this.idProduct = idProductIndex;
@@ -24,7 +25,21 @@ public abstract class Product implements Comparable<ItUserDevices>{
         idProductIndex++;
     }
     
-    public String getProductName() {
+    
+    
+    public Order getInOrder() {
+		return inOrder;
+	}
+
+
+
+	public void setInOrder(Order inOrder) {
+		this.inOrder = inOrder;
+	}
+
+
+
+	public String getProductName() {
     	return productName;
     }
 

@@ -5,6 +5,7 @@ import java.io.IOException;
 import csvs.Log;
 import csvs.ReadCSV;
 import csvs.WriteCSV;
+import services.ServiceAdmin;
 import services.ServiceBasicUser;
 import services.ServiceLaptops;
 import services.ServicePhones;
@@ -62,9 +63,10 @@ public class Main {
     	servicephones.printListPhones();
    	
     	ServiceBasicUser serviceBasicUser = new ServiceBasicUser();
+    	ServiceAdmin serviceAdmin = new ServiceAdmin();
     	Admin admin = new Admin("Gabi", "123456", "admin1@gmail.com");
-    	admin.createBasicUser(user2);
-    	admin.createBasicUser(user1);
+    	serviceAdmin.createBasicUser(user2);
+    	serviceAdmin.createBasicUser(user1);
     	System.out.println(serviceBasicUser.getBasicUsers());
 		
 		ServiceBasicUser serviceUsers = new ServiceBasicUser();
@@ -85,11 +87,11 @@ public class Main {
 		ServiceBasicUser serviceUsers1 = new ServiceBasicUser();
 		ServicePhones servicephones1 = new ServicePhones();
 		ReadCSV loader = ReadCSV.getInstance();
-   	    ReadCSV.loadClasses(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
+   	    loader.loadClasses(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
     	servicelaptops1.printListLaptops();
 //    	servicelaptops1.removeLaptopByName("ASUS X615MA");
     	WriteCSV writer = WriteCSV.getInstance();
-    	WriteCSV.writeToFiles(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
+    	writer.writeToFiles(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
     	
     	Log.log("System shutdown");
         Log.getBw().close();

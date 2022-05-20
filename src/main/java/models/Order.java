@@ -5,10 +5,12 @@ import java.util.LinkedList;
 public class Order {
     private int idOrder;
     private LinkedList<Product> products;
+    private Courier courier;
 
-    public Order(int idOrder, LinkedList<Product> products) {
+    public Order(int idOrder, LinkedList<Product> products, Courier courier) {
     	this.idOrder = idOrder;
         this.products = products;
+        this.setCourier(courier);
     }
 
     public void addProduct(Product product){
@@ -37,4 +39,12 @@ public class Order {
                 ", products=" + products +
                 '}';
     }
+
+	public Courier getCourier() {
+		return courier;
+	}
+
+	public void setCourier(Courier courier) {
+		this.courier = courier;
+	}
 }

@@ -16,18 +16,20 @@ import services.ServiceSwitches;
 import services.ServiceTVs;
 
 public class WriteCSV {
-	private static final WriteCSV wr_csv = null;
+	private static WriteCSV writeCSV = null;
 
     private WriteCSV() {
     }
 
     public static WriteCSV getInstance() {
-        return wr_csv;
+    	if(writeCSV == null) 
+    		writeCSV = new WriteCSV();
+    	return writeCSV;
     }
     
     //TODO: add methods for all necessary models
     
-    private static void laptops(ServiceLaptops service) throws IOException {
+    private void laptops(ServiceLaptops service) throws IOException {
     	try (PrintWriter writer = new PrintWriter("src/main/java/csvs/laptops.csv")) {
 			List<Laptop> list = service.getArrayOfLaptops();
 			String header = "productName,	brand,	weight,	dimensions,	colour,	price,	processorType,	processorFrequency,	HDDCapacity,	RAMMemory,	displayType,	diagonal,	wireless,	bluetooth,	ports,	audio,	camera,	baterry,	operatingSystem	powerConsumed,	cacheMemory	chipsetVideo,	videoRamMemory,	touchscreen,	optimalResolution,	slots,	cardReader,	numericalKeyboard,	illuminatedKeyboard,	imageURL";
@@ -45,7 +47,7 @@ public class WriteCSV {
         
     }
     
-    private static void switches(ServiceSwitches service) throws IOException {
+    private void switches(ServiceSwitches service) throws IOException {
     	try (PrintWriter writer = new PrintWriter("src/main/java/csvs/switches.csv")) {
 			List<Switch> list = service.getSwitches();
 			String header = "productName, brand, weight, dimensions, colour, price, ports, standards, management, powerSupply, transferSpeed, connectivity, poe, ledIndicators, rackMountable, macTable, imageURL";
@@ -61,7 +63,7 @@ public class WriteCSV {
         
     }
     
-    private static void basicUsers(ServiceBasicUser service) throws IOException {
+    private void basicUsers(ServiceBasicUser service) throws IOException {
     	try (PrintWriter writer = new PrintWriter("src/main/java/csvs/basicUsers.csv")) {
 			TreeSet<BasicUser> list = service.getBasicUsers();
 			String header = "Username, Password, Email";
@@ -74,7 +76,7 @@ public class WriteCSV {
         
     }
     
-    private static void phones(ServicePhones service) throws IOException {
+    private void phones(ServicePhones service) throws IOException {
     	try (PrintWriter writer = new PrintWriter("src/main/java/csvs/phones.csv")) {
 			List<Phone> list = service.getPhones();
 			String header = "productName, brand, weight, dimensions, colour, price, processorType, processorFrequency, HDDCapacity, RAMMemory, displayType, diagonal, wireless, bluetooth, ports, audio, camera, battery, operatingSystem, dualSim, network2g, network3g, network4g, gps, wlan, nfc, resolution, memorySlot, sensors, imageURL";
@@ -90,7 +92,7 @@ public class WriteCSV {
     }
     
     
-    public static void writeToFiles(ServiceLaptops servicelapt, ServiceSwitches serviceSwitch, ServiceBasicUser serviceBasicUser, ServicePhones servicePhone) {
+    public void writeToFiles(ServiceLaptops servicelapt, ServiceSwitches serviceSwitch, ServiceBasicUser serviceBasicUser, ServicePhones servicePhone) {
     	try {
     		Log.log("Uploading laptops");
 			laptops(servicelapt);

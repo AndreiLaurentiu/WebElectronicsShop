@@ -14,17 +14,6 @@ public abstract class User implements Comparable<User>{
         this.emailAddress = emailAddress;
         idUserIndex++;
     }
-
-    public void addProductInOrder(Order order, Product product){
-        order.addProduct(product);
-    }
-
-    public void chooseDeliveryService(Courier courier, String deliveryDate){
-        if(courier.acceptDelivery(deliveryDate))
-            System.out.println("Comanda a fost plasata cu succes.");
-        else
-            System.out.println("Va rugam introduceti alta data.");
-    }
     
     public String toString() {
     	return idUser + " " + username + " " + password + " " + emailAddress + "\n";

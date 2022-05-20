@@ -5,43 +5,39 @@ public abstract class ItUserDevices extends Product {
 	private int idIUD;
     private String processorType;
     private String processorFrequency;
-    private String HDDCapacity;
-    private String RAMMemory;
-    private String DisplayType;
+    private String hddCapacity;
+    private String ramMemory;
+    private String displayType;
     private float diagonal;
-    private String wireless;
-    private String bluetooth;
-    private String ports;
     private String audio;
     private String camera;
     private String battery;
     private String operatingSystem;
     private String others;
+    private Connection connection;
 
     public ItUserDevices(String productName, String brand, float weight, String dimensions, String colour, int price, String processorType,
-                         String processorFrequency, String HDDCapacity, String RAMMemory, String displayType,
+                         String processorFrequency, String hddCapacity, String ramMemory, String displayType,
                          float diagonal, String wireless, String bluetooth, String ports,
                          String audio, String camera, String battery, String operatingSystem, String imageURL) {
         super(productName, brand, weight, dimensions, colour, price, imageURL);
         this.idIUD = idIUDIndex;
         this.processorType = processorType;
         this.processorFrequency = processorFrequency;
-        this.HDDCapacity = HDDCapacity;
-        this.RAMMemory = RAMMemory;
-        DisplayType = displayType;
+        this.hddCapacity = hddCapacity;
+        this.ramMemory = ramMemory;
+        this.displayType = displayType;
         this.diagonal = diagonal;
-        this.wireless = wireless;
-        this.bluetooth = bluetooth;
-        this.ports = ports;
         this.audio = audio;
         this.camera = camera;
         this.battery = battery;
         this.operatingSystem = operatingSystem;
+        this.connection = new Connection(wireless, bluetooth, ports);
         idIUDIndex++;
     }
     
     public String getRAMMemory() {
-    	return this.RAMMemory;
+    	return this.ramMemory;
     }
     
     public String getProcessorType() {
@@ -53,11 +49,11 @@ public abstract class ItUserDevices extends Product {
     }
 
     public String getHDDCapacity() {
-        return HDDCapacity;
+        return hddCapacity;
     }
 
     public String getDisplayType() {
-        return DisplayType;
+        return displayType;
     }
 
     public float getDiagonal() {
@@ -65,15 +61,15 @@ public abstract class ItUserDevices extends Product {
     }
 
     public String getWireless() {
-        return wireless;
+        return connection.getWireless();
     }
 
     public String getBluetooth() {
-        return bluetooth;
+        return connection.getBluetooth();
     }
 
     public String getPorts() {
-        return ports;
+        return connection.getPorts();
     }
 
     public String getAudio() {

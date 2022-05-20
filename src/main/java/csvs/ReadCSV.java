@@ -19,18 +19,20 @@ import services.ServiceTVs;
 
 public class ReadCSV {
 
-	 private static final ReadCSV rw_csv = null;
+	 private static ReadCSV readCSV = null;
 
 	    private ReadCSV() {
 	    }
 
 	    public static ReadCSV getInstance() {
-	        return rw_csv;
+	    	if(readCSV == null) 
+	    		readCSV = new ReadCSV();
+	    	return readCSV;
 	    }
 	    
 	    //TODO: add methods for all necessary models
 	    
-	    private static void laptops(ServiceLaptops service) throws IOException {
+	    private void laptops(ServiceLaptops service) throws IOException {
 	    	File file = new File("src/main/java/csvs/laptops.csv");
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr,10 *1024);
@@ -50,7 +52,7 @@ public class ReadCSV {
             br.close();
         }
 	    
-	    private static void switches(ServiceSwitches service) throws IOException {
+	    private void switches(ServiceSwitches service) throws IOException {
             File file = new File("src/main/java/csvs/switches.csv");
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr,10 *1024);
@@ -68,7 +70,7 @@ public class ReadCSV {
             br.close();
         }
 	    
-	    private static void basicUsers(ServiceBasicUser service) throws IOException {
+	    private void basicUsers(ServiceBasicUser service) throws IOException {
             File file = new File("src/main/java/csvs/basicUsers.csv");
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr,10 *1024);
@@ -84,7 +86,7 @@ public class ReadCSV {
             br.close();
         }
 	    
-	    private static void phone(ServicePhones service) throws IOException {
+	    private void phone(ServicePhones service) throws IOException {
             File file = new File("src/main/java/csvs/phones.csv");
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr,10 *1024);
@@ -105,7 +107,7 @@ public class ReadCSV {
         }
 	    
 	    
-        public static void loadClasses(ServiceLaptops serviceLapt, ServiceSwitches serviceSwitch, ServiceBasicUser serviceBasicUser, ServicePhones servicePhone) {
+        public void loadClasses(ServiceLaptops serviceLapt, ServiceSwitches serviceSwitch, ServiceBasicUser serviceBasicUser, ServicePhones servicePhone) {
             try {
             	Log.log("Loading laptops");
                 laptops(serviceLapt);
