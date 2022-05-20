@@ -12,25 +12,6 @@ public class Order {
         this.products = products;
         this.setCourier(courier);
     }
-
-    public void addProduct(Product product){
-        products.add(product);
-    }
-    
-    public Order() {
-    	products = new LinkedList<>();
-    }
-    
-    public void removeProduct(Product product) {
-    	products.remove(product);
-    }
-    
-    public int calculateTotalCost() {
-    	int sum = 0;
-    	for(Product product : products)
-    		sum += product.getPrice();
-    	return sum;
-    }
     
     @Override
     public String toString() {
@@ -47,4 +28,32 @@ public class Order {
 	public void setCourier(Courier courier) {
 		this.courier = courier;
 	}
+
+	public LinkedList<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(LinkedList<Product> products) {
+		this.products = products;
+	}
+
+	public int getIdOrder() {
+		return idOrder;
+	}
+	
+	public void addProductInOrderById(Product product, int index){
+        products.add(product);
+    }
+    
+    public void removeProduct(Product product) {
+    	products.remove(product);
+    }
+    
+    public int calculateTotalCost() {
+    	int sum = 0;
+    	for(Product product : products)
+    		sum += product.getPrice();
+    	return sum;
+    }
+	
 }

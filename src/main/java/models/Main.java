@@ -5,11 +5,15 @@ import java.io.IOException;
 import csvs.Log;
 import csvs.ReadCSV;
 import csvs.WriteCSV;
+import jdbc.DBConnection;
+import jdbc.ReadDB;
 import services.ServiceAdmin;
 import services.ServiceBasicUser;
+import services.ServiceCourier;
 import services.ServiceLaptops;
 import services.ServicePhones;
 import services.ServiceSwitches;
+import services.ServiceTVs;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
@@ -86,6 +90,8 @@ public class Main {
 		ServiceSwitches serviceswitch = new ServiceSwitches();
 		ServiceBasicUser serviceUsers1 = new ServiceBasicUser();
 		ServicePhones servicephones1 = new ServicePhones();
+		ServiceTVs serviceTV = new ServiceTVs();
+		ServiceCourier serviceCourier = new ServiceCourier();
 		ReadCSV loader = ReadCSV.getInstance();
    	    loader.loadClasses(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
     	servicelaptops1.printListLaptops();
@@ -94,6 +100,28 @@ public class Main {
     	writer.writeToFiles(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
     	
     	Log.log("System shutdown");
+        Log.getBw().close();
+        
+      //testing
+        Log.clearLog();
+        Log.log("System startup");
+
+        DBConnection dbcon = DBConnection.getInstance();
+        ReadDB rdb = ReadDB.getInstance();
+        
+        boolean flag = true;
+        try {
+            dbcon.startConn();
+
+            rdb.loadObjects(serviceUsers1, serviceTV, serviceCourier, serviceAdmin);
+        } catch (Exception e) {
+            Log.log("Can't access database");
+            flag = false;
+        }
+        
+        if(flag) dbcon.closeConn();
+
+        Log.log("System shutdown");
         Log.getBw().close();
 		
     }

@@ -80,4 +80,196 @@ public class TV extends Product{
                 ", price='" + getPrice() + '\'' +
                 '}';
     }
+
+
+	public int getIdTV() {
+		return idTV;
+	}
+
+
+	public void setIdTV(int idTV) {
+		this.idTV = idTV;
+	}
+
+
+	public String getDiagonal() {
+		return diagonal;
+	}
+
+
+	public void setDiagonal(String diagonal) {
+		this.diagonal = diagonal;
+	}
+
+
+	public String getDisplayType() {
+		return displayType;
+	}
+
+
+	public void setDisplayType(String displayType) {
+		this.displayType = displayType;
+	}
+
+
+	public String getResolution() {
+		return resolution;
+	}
+
+
+	public void setResolution(String resolution) {
+		this.resolution = resolution;
+	}
+
+
+	public String getScreenResolution() {
+		return screenResolution;
+	}
+
+
+	public void setScreenResolution(String screenResolution) {
+		this.screenResolution = screenResolution;
+	}
+
+
+	public String getCurbed() {
+		return curbed;
+	}
+
+
+	public void setCurbed(String curbed) {
+		this.curbed = curbed;
+	}
+
+
+	public String getImageCharacteristics() {
+		return imageCharacteristics;
+	}
+
+
+	public void setImageCharacteristics(String imageCharacteristics) {
+		this.imageCharacteristics = imageCharacteristics;
+	}
+
+
+	public String getSoundCharacteristics() {
+		return soundCharacteristics;
+	}
+
+
+	public void setSoundCharacteristics(String soundCharacteristics) {
+		this.soundCharacteristics = soundCharacteristics;
+	}
+
+
+	public String getIntegratedSpeaker() {
+		return integratedSpeaker;
+	}
+
+
+	public void setIntegratedSpeaker(String integratedSpeaker) {
+		this.integratedSpeaker = integratedSpeaker;
+	}
+
+
+	public String getConnector() {
+		return connector;
+	}
+
+
+	public void setConnector(String connector) {
+		this.connector = connector;
+	}
+
+
+	public String getHdmiInputs() {
+		return hdmiInputs;
+	}
+
+
+	public void setHdmiInputs(String hdmiInputs) {
+		this.hdmiInputs = hdmiInputs;
+	}
+
+
+	public String getBluetooth() {
+		return bluetooth;
+	}
+
+
+	public void setBluetooth(String bluetooth) {
+		this.bluetooth = bluetooth;
+	}
+
+
+	public String getUsbInput() {
+		return usbInput;
+	}
+
+
+	public void setUsbInput(String usbInput) {
+		this.usbInput = usbInput;
+	}
+
+
+	public String getCiSlot() {
+		return ciSlot;
+	}
+
+
+	public void setCiSlot(String ciSlot) {
+		this.ciSlot = ciSlot;
+	}
+
+
+	public String getSmartTVFunctions() {
+		return smartTVFunctions;
+	}
+
+
+	public void setSmartTVFunctions(String smartTVFunctions) {
+		this.smartTVFunctions = smartTVFunctions;
+	}
+
+
+	public String getPowerConsumption() {
+		return powerConsumption;
+	}
+
+
+	public void setPowerConsumption(String powerConsumption) {
+		this.powerConsumption = powerConsumption;
+	}
+
+
+	public String getIncludedAccessories() {
+		return includedAccessories;
+	}
+
+
+	public void setIncludedAccessories(String includedAccessories) {
+		this.includedAccessories = includedAccessories;
+	}
+
+
+	public String getOthers() {
+		return others;
+	}
+
+
+	public void setOthers(String others) {
+		this.others = others;
+	}
+
+
+	public String getTuner() {
+		return tuner;
+	}
+
+
+	public void setTuner(String tuner) {
+		this.tuner = tuner;
+	}
+    
+    
 }
