@@ -1,12 +1,9 @@
 package services;
 
-import java.util.Comparator;
 import java.util.LinkedList;
 
 import daos.OrderDao;
-import models.Courier;
 import models.Order;
-import models.Product;
 
 public class ServiceOrder {
 	
@@ -24,7 +21,7 @@ public class ServiceOrder {
 		orderDao.delete(index);
     }
     
-   public LinkedList<Order> getTVs(){
+   public LinkedList<Order> getOrders(){
 	   return orderDao.getAll();
 	   }
     

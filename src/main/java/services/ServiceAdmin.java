@@ -13,6 +13,7 @@ import services.ServiceTVs;
 import services.ServiceWifiRouters;
 
 import csvs.Log;
+import daos.AdminDao;
 import daos.BasicUserDao;
 import models.Admin;
 import models.BasicUser;
@@ -25,7 +26,7 @@ public class ServiceAdmin {
     ServiceSwitches serviceswitches = new ServiceSwitches();
     ServiceWifiRouters servicewifirouters = new ServiceWifiRouters();
     ServiceTVs servicetvs = new ServiceTVs();
-    ServiceAdmin serviceAdmin = new ServiceAdmin();
+    AdminDao adminDao = new AdminDao();
     
     public void createBasicUser(BasicUser user) {
     	try {
@@ -112,11 +113,9 @@ public class ServiceAdmin {
     }
 
 	public void addAdmin(Admin admin) {
-		serviceAdmin.addAdmin(admin);
+		adminDao.save(admin);
 		
 	}
-    
-    //TODO: add update & read methods for all models
     
 }
 

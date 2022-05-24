@@ -92,12 +92,12 @@ public class Main {
 		ServicePhones servicephones1 = new ServicePhones();
 		ServiceTVs serviceTV = new ServiceTVs();
 		ServiceCourier serviceCourier = new ServiceCourier();
-		ReadCSV loader = ReadCSV.getInstance();
-   	    loader.loadClasses(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
-    	servicelaptops1.printListLaptops();
-//    	servicelaptops1.removeLaptopByName("ASUS X615MA");
-    	WriteCSV writer = WriteCSV.getInstance();
-    	writer.writeToFiles(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
+//		ReadCSV loader = ReadCSV.getInstance();
+//   	    loader.loadClasses(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
+//    	servicelaptops1.printListLaptops();
+////    	servicelaptops1.removeLaptopByName("ASUS X615MA");
+//    	WriteCSV writer = WriteCSV.getInstance();
+//    	writer.writeToFiles(servicelaptops1, serviceswitch, serviceUsers1, servicephones1);
     	
     	Log.log("System shutdown");
         Log.getBw().close();
